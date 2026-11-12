@@ -1,0 +1,405 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f5;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Header ---------- */
+header {
+  position: relative;
+  background-color: #2563eb;
+  color: #171717;
+  padding: 10px 5%;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 5px;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.logo img {
+  width: clamp(45px, 8vw, 65px);
+  height: clamp(45px, 8vw, 65px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo h2 {
+  font-size: clamp(18px, 3vw, 22px);
+  margin: 0;
+  color: #171717;
+}
+
+.logo h5 {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 4px 0 0 0;
+  color: #171717; 
+}
+
+/* ---------- Top nav ---------- */
+.topnav {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin-left: auto;          /* pushes nav + search to the right */
+}
+
+.topnav a {
+  display: block;
+  color: #171717;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #737373;
+  color: #171717;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/* ---------- Search (separate from nav) ---------- */
+.search {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background-color: #ffffff;
+  width: 220px;
+  outline: none;
+}
+
+.search input:focus {
+  border-color: #171717;
+}
+
+/* icon button is only for mobile */
+.search-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 8px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+/* ---------- Tablet ---------- */
+@media screen and (max-width: 900px) {
+  header {
+    padding: 10px 4%;
+  }
+
+  .topnav a {
+    padding: 12px 10px;
+    font-size: 16px;
+  }
+
+  .search input {
+    width: 160px;
+  }
+  
+  
+}
+
+/* ---------- Phone ---------- */
+@media screen and (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+    min-height: auto;
+    gap: 10px;
+  }
+
+  /* logo on the left, search icon in the right corner */
+  .logo {
+    flex: 1;
+  }
+
+  .search {
+    order: 2;
+    position: static;         /* lets the input position against the header */
+  }
+
+  .search-btn {
+    display: block;
+  }
+
+  /* search bar is hidden until the icon is tapped */
+  .search input {
+    display: none;
+  }
+
+  .search.open input {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 4%;
+    right: 4%;
+    width: auto;
+    margin-top: 8px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* nav drops to its own full-width row */
+  .topnav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    display: block;
+    text-align: left;
+  }
+}
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 40px 5%;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("hero.jpg") center/cover;
+  color: #ffffff;
+}
+
+.hero-text { max-width: 520px; }
+.hero h1 { font-size: clamp(30px, 6vw, 52px); margin: 0 0 12px; }
+.hero p { font-size: clamp(16px, 2.5vw, 20px); margin-bottom: 24px; }
+
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover { background: #1d4ed8; }
+
+.section { padding: 50px 5%; text-align: center; }
+.section-title { margin-bottom: 30px; }
+
+/* auto-fits as many columns as the screen allows */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+/* Tablet and phone: 2 per row */
+@media screen and (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  color: #171717;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.category i { font-size: 36px; color: #2563eb; margin-bottom: 10px; }
+.product img { width: 100%; border-radius: 8px; }
+.price { font-weight: 700; margin: 6px 0 12px; }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  background: #ffffff;
+}
+.features i { font-size: 32px; color: #2563eb; }
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.newsletter input {
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 25px;
+  width: min(320px, 100%);
+}
+
+footer {
+  background: #2563eb;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+/* badge on the nav cart link */
+.cart-count {
+  display: none;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 12px;
+  min-width: 20px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ---------- Cart page ---------- */
+.cart-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 5%;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.cart-info { flex: 1; min-width: 0; }
+.cart-info h3 { margin: 0 0 4px; font-size: 17px; }
+.cart-info p { margin: 0; font-weight: 700; }
+
+.qty { display: flex; align-items: center; gap: 10px; }
+.qty button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.remove {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.empty { text-align: center; padding: 40px 0; }
+
+@media screen and (max-width: 600px) {
+  .cart-item { flex-wrap: wrap; }
+  .cart-info { flex-basis: calc(100% - 100px); }
+  .cart-summary { text-align: center; }
+  .cart-summary .btn { width: 100%; }
+}
+.form{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px 5%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.form-group {
+  margin-bottom: 16px;
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+
+}
+.login-section{
+   max-width: 400px;
+  margin: 0 auto;
+  padding: 30px 5%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+}
+@media screen and (max-width: 600px) {
+  .form{
+    width: 90%;
+    padding: 20px;
+  }
+  .login-section {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  
+}

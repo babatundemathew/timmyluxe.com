@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timmy Luxe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="TIMMY LUXE.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="TIMMY LUXE.png" alt="Timmy Luxe Logo" width="100px" height="100px">   
+            <h2>Timmy Luxe</h2>
+            <h5>Your Style, Your Way</h5>
+        </div>
+    <div class="topnav" id="myTopnav">
+        <a class="active" href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="product.html"><i class="fa-solid fa-cart-shopping"></i>Products</a>
+        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i> </a>
+    </div>
+    </header>
+    <main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Your Style, Your Way</h1>
+      <p>Discover premium fashion made to match your personality.</p>
+      <a href="product.html" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section">
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="grid">
+      <a href="product.html" class="card category"><i class="fas fa-shirt"></i><h3>Men</h3></a>
+      <a href="product.html" class="card category"><i class="fas fa-person-dress"></i><h3>Women</h3></a>
+      <a href="product.html" class="card category"><i class="fas fa-glasses"></i><h3>Accessories</h3></a>
+      <a href="product.html" class="card category"><i class="fas fa-star"></i><h3>New Arrivals</h3></a>
+    </div>
+  </section>
+
+  <!-- Featured products -->
+  <section class="section">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="grid">
+      <div class="card product">
+        <img src="menshirt.jpeg" alt="Product name">
+        <h3>Men's polo shirt</h3>
+        <p class="price" data-price-display="25000"></p>
+        <button class="btn add-to-cart"
+          data-id="1"
+          data-name="Men's polo shirt"
+          data-price="25000"
+          data-img="product1.jpg">Add to Cart</button>
+      </div>
+        <div class="card product">
+            <img src="womendress.jpeg" alt="Product name">
+            <h3>Women's dress</h3>
+            <p class="price" data-price-display="35000"></p>
+            <button class="btn add-to-cart"
+          data-id="2"
+          data-name="Women's dress"
+          data-price="35000"
+          data-img="product2.jpg">Add to Cart</button>
+    </div>
+     <div class="card product">
+            <img src="glasses.jpeg" alt="Product name">
+            <h3>Smart AI Glasses</h3>
+            <p class="price" data-price-display="600000"></p>
+            <button class="btn add-to-cart"
+          data-id="3"
+          data-name="Smart AI Glasses"
+          data-price="600000"
+          data-img="product3.jpg">Add to Cart</button>
+    </div>
+    <div class="card product">
+            <img src="NECKLACE.jPEG" alt="Product name">
+            <h3>Necklace</h3>
+            <p class="price" data-price-display="6000"></p>
+            <button class="btn add-to-cart"
+          data-id="4"
+          data-name="Necklace"
+          data-price="6000"
+          data-img="product4.jpg">Add to Cart</button>
+    </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="section features">
+    <div><i class="fas fa-truck-fast"></i><h3>Fast Delivery</h3><p>Quick shipping to your door.</p></div>
+    <div><i class="fas fa-medal"></i><h3>Quality Materials</h3><p>Made to last.</p></div>
+    <div><i class="fas fa-rotate-left"></i><h3>Easy Returns</h3><p>Not happy? Send it back.</p></div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section newsletter">
+    <h2>Join the Timmy Luxe Family</h2>
+    <form>
+      <input type="email" placeholder="Your email" aria-label="Email">
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p style=" font-size: 15px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Location:Oyo,Oyo state.</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Timmy Luxe. All rights reserved.</p>
+</footer>
+</body>
+</html>

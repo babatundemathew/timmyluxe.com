@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timmy Luxe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="TIMMY LUXE.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="TIMMY LUXE.png" alt="Timmy Luxe Logo" width="100px" height="100px">   
+            <h2>Timmy Luxe</h2>
+            <h5>Your Style, Your Way</h5>
+        </div>
+    <div class="topnav" id="myTopnav">
+        <a  href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="product.html"><i class="fa-solid fa-cart-shopping"></i>Products</a>
+        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i> </a>
+    </div>
+    </header>
+<main class="cart-page">
+  <h1>Your Cart</h1>
+  <div id="cart-items"></div>
+
+  <div class="cart-summary">
+    <p>Total: <span id="cart-total">0.00</span></p>
+    <button class="btn" onclick="checkout()">Checkout</button>
+  </div>
+</main>
+<!-- Newsletter -->
+  <section class="section newsletter">
+    <h2>Join the Timmy Luxe Family</h2>
+    <form>
+      <input type="email" placeholder="Your email" aria-label="Email">
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p style=" font-size: 15px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Location:Oyo,Oyo state.</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Timmy Luxe. All rights reserved.</p>
+</footer>
